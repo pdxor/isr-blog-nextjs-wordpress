@@ -1,30 +1,50 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+// import { useState } from 'react';
+import Link from "next/link";
+import MailchimpSignupForm from '../components/footer/MailchimpSignupForm';
+import FooterFAQ from '../components/footer/FooterFAQ';
+import FooterSocialIcons from '../components/footer/FooterSocialIcons';
+import FooterSupport from '../components/footer/FooterSupport';
+import SH4Text from "./text/SH4Text";
 
-export default function Footer() {
+function Footer() {
+  const currentYear = new Date().getFullYear(); // get the current year dynamically
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+    <footer className="bg-black">
+
+      <div className="container mx-auto px-6 py-10 text-left text-xs">
+        <div className="flex flex-wrap text-white">
+          {/* Column 1 */}
+          <Link href="/support" className="mb-5 text-xs">
+            <SH4Text text='FAQ & CUSTOMER SUPPORT' />
+          </Link>
+
+        </div>
+        {/* Column 2 */}
+        <div className="w-full md:w-1/3  text-white font-bold">
+
+          <div>
+            <p className="mb-3 font-display text-base">Sign up for our newsletter</p>
+            <MailchimpSignupForm />
           </div>
         </div>
-      </Container>
+        {/* Column 3 */}
+        <div className="w-full md:w-1/3 text-white font-bold">
+          <div className="mb-4">
+            <FooterSupport />
+            <Link href="https://behindthechair.com/privacy-policy/" className="text-xs mb-10">PRIVACY POLICY </Link>
+          </div>
+          <div className="mb-4">
+            <Link href="https://behindthechair.com/terms-of-service/" className="text-xs mb-10">TERMS OF SERVICE</Link>
+          </div>
+          <div>
+
+          </div>
+          <FooterSocialIcons />
+          <p className="text-xs">&copy; {currentYear} behindthechair.com</p>
+        </div>
+      </div>
     </footer>
-  )
+  );
 }
+
+export default Footer;
