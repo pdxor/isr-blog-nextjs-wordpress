@@ -1,38 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-  ],
+    "./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        black: '#000000',
+        red: '#FF0000',
+        btcured: '#FF0000',
+        white: '#FFFFFF',
+        inactivegrey: '#F5F5F5',
+        grey: '#F5F5F5',
+        lightred: '#FEC0C0',
+        videogrey: '#333333',
+        pressedGrey: '#D9D9D9',
       },
-      spacing: {
-        28: '7rem',
+      fontFamily: {
+        sans: ['Roboto'],
+        display: ['Playfair Display', 'Oswald'],
+        heading: ['Montserrat'],
       },
-      letterSpacing: {
-        tighter: '-.04em',
-      },
-      lineHeight: {
-        tight: 1.2,
-      },
-      fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-      },
-      boxShadow: {
-        small: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
+      fontWeight: {
+        medium: 500,
+        bold: 700,
+        extrabold: 800,
       },
     },
   },
   plugins: [],
-}
+};
